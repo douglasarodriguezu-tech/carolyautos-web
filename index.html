@@ -19,48 +19,49 @@
     /* ENCABEZADO */
     header {
       background: linear-gradient(90deg, #E50914, #8B0000);
-      padding: 140px 20px 80px; /* AUMENTADO PARA QUE NO TAPE EL BANNER */
+      padding: 180px 20px 120px; /* MÁS ESPACIO PARA QUE EL BANNER SE VEA COMPLETO */
       text-align: center;
       color: white;
       background-image: url('https://raw.githubusercontent.com/douglasarodriguezu-tech/carolyautos-web/main/images/Banner%20automotriz%20.png');
       background-size: cover;
-      background-position: center top; /* MUESTRA MEJOR LOS LOGOS */
+      background-position: center top;
       background-blend-mode: multiply;
       position: relative;
     }
 
-    /* Fondo semitransparente detrás del texto */
+    /* Overlay mejorado */
     header .overlay {
-      background: rgba(0, 0, 0, 0.45);
-      padding: 40px 20px;
-      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.55); /* MÁS OSCURO PARA MEJOR LECTURA */
+      padding: 50px 40px;
+      border-radius: 14px;
       display: inline-block;
+      max-width: 900px; /* MÁS ANCHO PARA QUE EL TEXTO RESPIRE */
     }
 
     header h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 60px;
+      font-size: 64px;
       margin: 0;
       letter-spacing: 3px;
       text-shadow: 3px 3px 8px black;
     }
 
     header p {
-      font-size: 20px;
-      margin: 5px 0;
+      font-size: 22px;
+      margin: 8px 0;
       text-shadow: 2px 2px 6px black;
     }
 
     .btn {
       background: #25D366;
       color: white;
-      padding: 12px 20px;
+      padding: 14px 24px;
       text-decoration: none;
       border-radius: 6px;
-      margin: 5px;
+      margin: 8px;
       display: inline-block;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .btn:hover {
