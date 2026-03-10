@@ -19,13 +19,22 @@
     /* ENCABEZADO */
     header {
       background: linear-gradient(90deg, #E50914, #8B0000);
-      padding: 60px 20px;
+      padding: 140px 20px 80px; /* AUMENTADO PARA QUE NO TAPE EL BANNER */
       text-align: center;
       color: white;
       background-image: url('https://raw.githubusercontent.com/douglasarodriguezu-tech/carolyautos-web/main/images/Banner%20automotriz%20.png');
       background-size: cover;
-      background-position: center;
+      background-position: center top; /* MUESTRA MEJOR LOS LOGOS */
       background-blend-mode: multiply;
+      position: relative;
+    }
+
+    /* Fondo semitransparente detrás del texto */
+    header .overlay {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 40px 20px;
+      border-radius: 12px;
+      display: inline-block;
     }
 
     header h1 {
@@ -145,16 +154,18 @@
 
   <!-- ENCABEZADO -->
   <header>
-    <h1>Estrena tu vehículo hoy en Florida</h1>
-    <p>Aprobación con ITIN, pasaporte o sin crédito</p>
-    <p>Asesor: Caroly Uzcategui & Douglas Rodríguez</p>
-    <p>Teléfono: +1 407 818 7690</p>
-    <p>WhatsApp: +1 321 318 2366</p>
-    <p>Ubicación: 1307 W Memorial Blvd, Lakeland, Florida, 33815</p>
+    <div class="overlay">
+      <h1>Estrena tu vehículo hoy en Florida</h1>
+      <p>Aprobación con ITIN, pasaporte o sin crédito</p>
+      <p>Asesor: Caroly Uzcategui & Douglas Rodríguez</p>
+      <p>Teléfono: +1 407 818 7690</p>
+      <p>WhatsApp: +1 321 318 2366</p>
+      <p>Ubicación: 1307 W Memorial Blvd, Lakeland, Florida, 33815</p>
 
-    <a class="btn" href="#inventario">Ver Inventario</a>
-    <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
-    <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+      <a class="btn" href="#inventario">Ver Inventario</a>
+      <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
+      <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+    </div>
   </header>
 
   <!-- INVENTARIO -->
