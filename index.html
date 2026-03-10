@@ -80,4 +80,61 @@
 
     <a class="btn" href="#inventario">Ver Inventario</a>
     <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
-    <a class="btn" href="https://wa.me/13213182366" target="_blank">
+    <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+</header>
+
+<section id="inventario" class="section">
+    <h2>Inventario Disponible</h2>
+    <p>Vehículos inspeccionados, garantizados y con financiamiento accesible.</p>
+
+    <!-- INVENTARIO DINÁMICO -->
+    <div id="inventario-dinamico" class="inventory"></div>
+
+</section>
+
+<section id="formulario" class="section">
+    <h2>Solicitud de Información / Pre-Aprobación</h2>
+    <p>Completa el formulario y te contactaré en menos de 10 minutos.</p>
+
+    <iframe 
+        src="https://forms.gle/4DbaqF8sfsz3shBr8" 
+        width="100%" 
+        height="600" 
+        frameborder="0">
+    </iframe>
+</section>
+
+<footer>
+    <p>Caroly y El Chaparrito Auto Sales Florida © 2026</p>
+    <p>WhatsApp: +1 321 318 2366</p>
+</footer>
+
+<!-- SCRIPT PARA CARGAR INVENTARIO DINÁMICO -->
+<script>
+fetch("https://script.google.com/macros/s/AKfycbwXcd4qYy7d4TaZWkC-luonOHenkMyldAMg_KTqKoFGVi9xeqU1pRYp8JChltY_NfijGQ/exec")
+  .then(res => res.json())
+  .then(data => {
+    const contenedor = document.getElementById("inventario-dinamico");
+    contenedor.innerHTML = "";
+
+    data.forEach(auto => {
+      contenedor.innerHTML += `
+        <div class="car-card">
+            <img src="${auto.foto1}" alt="${auto.modelo}">
+            <img src="${auto.foto2}" alt="${auto.modelo}">
+            <h3>${auto.modelo} ${auto.ano} – Entrada: $${auto.down}</h3>
+            <p>
+              <strong>${auto.millas} millas</strong><br>
+              Combustible: ${auto.combustible}<br>
+              ${auto.descripcion}
+            </p>
+            <a class="btn" href="https://wa.me/13213182366" target="_blank">Solicitar Información</a>
+        </div>
+      `;
+    });
+  })
+  .catch(err => console.error("Error cargando inventario:", err));
+</script>
+
+</body>
+</html>
