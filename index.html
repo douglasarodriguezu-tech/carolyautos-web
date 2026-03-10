@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caroly & El Chaparrito Auto Sales</title>
+    <title>Caroly y El Chaparrito Auto Sales Florida</title>
 
-    <!-- Tipografía estilo automotriz -->
+    <!-- Tipografías modernas -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: #111; /* Fondo negro elegante */
+            background: #111; /* Fondo oscuro elegante */
             color: white;
         }
 
         /* ENCABEZADO */
         header {
             background: linear-gradient(90deg, #E50914, #8B0000);
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             color: white;
             background-image: url('https://raw.githubusercontent.com/douglasarodriguezu-tech/carolyautos-web/main/images/header-banner.jpg');
@@ -37,141 +37,157 @@
         }
 
         header p {
-            font-size: 22px;
-            margin-top: 10px;
+            font-size: 20px;
+            margin: 5px 0;
             text-shadow: 2px 2px 6px black;
         }
 
-        /* CONTENEDOR DE VEHÍCULOS */
-        .container {
-            width: 90%;
-            max-width: 1300px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background: #1EBE57;
+        }
+
+        /* SECCIONES */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: #E50914;
+        }
+
+        /* INVENTARIO */
+        .inventory {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 25px;
         }
 
-        /* TARJETAS */
-        .card {
+        .car-card {
             background: #1A1A1A;
+            width: 320px;
+            padding: 20px;
             border-radius: 12px;
-            padding: 15px;
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            text-align: left;
             transition: transform 0.2s ease;
         }
 
-        .card:hover {
+        .car-card:hover {
             transform: scale(1.03);
         }
 
-        .card img {
+        .car-card img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
-        .card h3 {
+        .car-card h3 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 32px;
             margin: 10px 0;
             color: #E50914;
         }
 
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00FF7F;
+        .car-card p {
+            font-size: 16px;
+            line-height: 1.4;
         }
 
-        .whatsapp-btn {
-            display: block;
-            margin-top: 15px;
-            padding: 12px;
-            background: #25D366;
+        footer {
+            background: #8B0000;
             color: white;
+            padding: 20px;
             text-align: center;
-            border-radius: 8px;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .whatsapp-btn:hover {
-            background: #1EBE57;
-        }
-
-        /* SECCIÓN SOBRE NOSOTROS */
-        .about {
-            background: #E50914;
-            padding: 40px 20px;
-            margin-top: 50px;
-            text-align: center;
-            color: white;
-        }
-
-        .about h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 20px;
-            max-width: 900px;
-            margin: auto;
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1>CAROLY & EL CHAPARRITO AUTO SALES</h1>
-        <p>Vehículos confiables para toda la comunidad de Florida</p>
-    </header>
+<header>
+    <h1>Estrena tu vehículo hoy en Florida</h1>
+    <p>Aprobación con ITIN, pasaporte o sin crédito</p>
 
-    <!-- CONTENEDOR DE VEHÍCULOS (Google Sheet se carga aquí) -->
-    <div class="container" id="vehicle-container">
-        <!-- Aquí se insertan automáticamente los vehículos desde Google Sheets -->
-    </div>
+    <p>Asesor: Caroly Uzcategui & Douglas Rodríguez</p>
+    <p>Teléfono: +1 407 818 7690</p>
+    <p>WhatsApp: +1 321 318 2366</p>
+    <p>Ubicación: 1307 W Memorial Blvd, Lakeland, Florida, 33815</p>
 
-    <!-- SECCIÓN SOBRE NOSOTROS -->
-    <section class="about">
-        <h2>Sobre Nosotros</h2>
-        <p>
-            En Caroly & El Chaparrito Auto Sales trabajamos con honestidad, transparencia y dedicación.
-            Ayudamos a toda la comunidad, incluyendo clientes con ITIN, sin crédito o reconstruyendo crédito.
-            Nuestro objetivo es ofrecer vehículos confiables y un servicio excepcional.
-        </p>
-    </section>
+    <a class="btn" href="#inventario">Ver Inventario</a>
+    <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
+    <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+</header>
 
-    <!-- SCRIPT PARA CARGAR GOOGLE SHEET -->
-    <script>
-        const sheetURL = "TU_URL_DE_GOOGLE_SHEET_AQUI";
+<section id="inventario" class="section">
+    <h2>Inventario Disponible</h2>
+    <p>Vehículos inspeccionados, garantizados y con financiamiento accesible.</p>
 
-        fetch(sheetURL)
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("vehicle-container");
+    <!-- INVENTARIO DINÁMICO -->
+    <div id="inventario-dinamico" class="inventory"></div>
 
-                data.forEach(car => {
-                    const card = document.createElement("div");
-                    card.className = "card";
+</section>
 
-                    card.innerHTML = `
-                        <img src="${car.foto1}" alt="${car.modelo}">
-                        <h3>${car.ano} ${car.marca} ${car.modelo}</h3>
-                        <p class="price">$${car.precio}</p>
-                        <a class="whatsapp-btn" href="https://wa.me/${car.whatsapp}?text=Hola, estoy interesado en el ${car.ano} ${car.marca} ${car.modelo}" target="_blank">
-                            Contactar por WhatsApp
-                        </a>
-                    `;
+<section id="formulario" class="section">
+    <h2>Solicitud de Información / Pre-Aprobación</h2>
+    <p>Completa el formulario y te contactaré en menos de 10 minutos.</p>
 
-                    container.appendChild(card);
-                });
-            });
-    </script>
+    <iframe 
+        src="https://forms.gle/4DbaqF8sfsz3shBr8"
+        width="100%"
+        height="600"
+        frameborder="0">
+    </iframe>
+</section>
+
+<footer>
+    <p>Caroly y El Chaparrito Auto Sales Florida © 2026</p>
+    <p>WhatsApp: +1 321 318 2366</p>
+</footer>
+
+<!-- SCRIPT PARA CARGAR INVENTARIO DINÁMICO -->
+<script>
+fetch("https://script.google.com/macros/s/AKfycbwXcd4qYy7d4TaZWkC-luonOHenkMyldAMg_KTqKoFGVi9xeqU1pRYp8JChltY_NfijGQ/exec")
+  .then(res => res.json())
+  .then(data => {
+    const contenedor = document.getElementById("inventario-dinamico");
+    contenedor.innerHTML = "";
+
+    data.forEach(auto => {
+      contenedor.innerHTML += `
+        <div class="car-card">
+            <img src="${auto.foto1}" alt="${auto.modelo}">
+            <img src="${auto.foto2}" alt="${auto.modelo}">
+            <h3>${auto.modelo} ${auto.ano} – Entrada: $${auto.down}</h3>
+            <p>
+              <strong>${auto.millas} millas</strong><br>
+              Combustible: ${auto.combustible}<br>
+              ${auto.descripcion}
+            </p>
+            <a class="btn" href="https://wa.me/13213182366" target="_blank">Solicitar Información</a>
+        </div>
+      `;
+    });
+  })
+  .catch(err => console.error("Error cargando inventario:", err));
+</script>
 
 </body>
 </html>
