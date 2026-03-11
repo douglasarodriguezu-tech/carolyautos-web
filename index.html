@@ -34,21 +34,24 @@
       display: block;
     }
 
-    /* BOTONES */
+    /* BOTONES MEJORADOS */
     .btn {
-      background: #25D366;
+      background: linear-gradient(135deg, #25D366, #128C7E);
       color: white;
-      padding: 14px 24px;
+      padding: 16px 28px;
       text-decoration: none;
-      border-radius: 6px;
-      margin: 8px;
+      border-radius: 10px;
+      margin: 10px;
       display: inline-block;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: all 0.25s ease;
     }
 
     .btn:hover {
-      background: #1EBE57;
+      transform: scale(1.06);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     }
 
     /* SECCIONES */
@@ -78,11 +81,12 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
       text-align: left;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .car-card:hover {
       transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
     }
 
     .car-card img {
@@ -98,9 +102,16 @@
       color: #E50914;
     }
 
-    .car-card p {
-      font-size: 16px;
-      line-height: 1.4;
+    .car-card .entrada {
+      font-size: 20px;
+      font-weight: bold;
+      color: #E50914;
+    }
+
+    .car-card .monto {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
     }
 
     /* SOBRE NOSOTROS */
@@ -147,7 +158,7 @@
   <div style="text-align:center; margin-top:20px;">
     <a class="btn" href="#inventario">Ver Inventario</a>
     <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
-    <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+    <a class="btn" href="https://wa.me/13213182366" target="_blank">💬 WhatsApp</a>
   </div>
 
   <!-- INVENTARIO -->
@@ -200,13 +211,19 @@
             <div class="car-card">
               <img src="${auto.foto1}" alt="${auto.modelo}">
               <img src="${auto.foto2}" alt="${auto.modelo}">
-              <h3>${auto.modelo} ${auto.ano} – Entrada: $${auto.down}</h3>
+              <h3>${auto.modelo} ${auto.ano}</h3>
+
               <p>
+                <span class="entrada">Entrada:</span>
+                <span class="monto">$${auto.down}</span><br>
                 <strong>${auto.millas} millas</strong><br>
                 Combustible: ${auto.combustible}<br>
                 ${auto.descripcion}
               </p>
-              <a class="btn" href="https://wa.me/13213182366" target="_blank">Solicitar Información</a>
+
+              <a class="btn" href="https://wa.me/13213182366" target="_blank">
+                💬 Solicitar Información
+              </a>
             </div>
           `;
         });
