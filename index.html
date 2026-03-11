@@ -16,42 +16,118 @@
       color: white;
     }
 
-    /* ENCABEZADO */
+    /* ============================
+       BANNER DESKTOP
+    ============================ */
     header {
-      background: linear-gradient(90deg, #E50914, #8B0000);
-      padding: 180px 20px 120px; /* MÁS ESPACIO PARA QUE EL BANNER SE VEA COMPLETO */
-      text-align: center;
-      color: white;
-      background-image: url('https://raw.githubusercontent.com/douglasarodriguezu-tech/carolyautos-web/main/images/Banner%20automotriz%20.png');
-      background-size: cover;
-      background-position: center top;
-      background-blend-mode: multiply;
       position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* Overlay mejorado */
-    header .overlay {
-      background: rgba(0, 0, 0, 0.55); /* MÁS OSCURO PARA MEJOR LECTURA */
-      padding: 50px 40px;
-      border-radius: 14px;
-      display: inline-block;
-      max-width: 900px; /* MÁS ANCHO PARA QUE EL TEXTO RESPIRE */
+    /* Fondo difuminado */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/banner-fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(6px) brightness(0.45);
+      z-index: 1;
     }
 
-    header h1 {
+    /* Foto de ustedes dos */
+    .banner-duo {
+      position: absolute;
+      z-index: 3;
+      height: 85%;
+      bottom: 0;
+    }
+
+    /* Logos */
+    .logo-left, .logo-right {
+      position: absolute;
+      top: 20px;
+      width: 180px;
+      z-index: 4;
+    }
+
+    .logo-left {
+      left: 20px;
+    }
+
+    .logo-right {
+      right: 20px;
+    }
+
+    /* Texto principal */
+    .banner-text {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      margin-top: -40px;
+    }
+
+    .banner-text h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 64px;
+      font-size: 70px;
       margin: 0;
-      letter-spacing: 3px;
-      text-shadow: 3px 3px 8px black;
+      color: #fff;
+      text-shadow: 3px 3px 10px black;
     }
 
-    header p {
-      font-size: 22px;
-      margin: 8px 0;
+    .banner-text p {
+      font-size: 26px;
+      margin-top: 10px;
       text-shadow: 2px 2px 6px black;
     }
 
+    /* ============================
+       BANNER MOBILE
+    ============================ */
+    @media (max-width: 768px) {
+      header {
+        height: auto;
+        padding: 40px 20px 60px;
+        background: #8B0000;
+      }
+
+      header::before {
+        display: none;
+      }
+
+      .logo-left, .logo-right {
+        position: static;
+        display: block;
+        margin: 0 auto 10px;
+        width: 160px;
+      }
+
+      .banner-duo {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+      }
+
+      .banner-text h1 {
+        font-size: 48px;
+      }
+
+      .banner-text p {
+        font-size: 20px;
+      }
+    }
+
+    /* BOTONES */
     .btn {
       background: #25D366;
       color: white;
@@ -62,6 +138,8 @@
       display: inline-block;
       font-weight: bold;
       font-size: 20px;
+      z-index: 10;
+      position: relative;
     }
 
     .btn:hover {
@@ -153,21 +231,27 @@
 
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- ============================
+       BANNER COMPLETO
+  ============================ -->
   <header>
-    <div class="overlay">
-      <h1>Estrena tu vehículo hoy en Florida</h1>
-      <p>Aprobación con ITIN, pasaporte o sin crédito</p>
-      <p>Asesor: Caroly Uzcategui & Douglas Rodríguez</p>
-      <p>Teléfono: +1 407 818 7690</p>
-      <p>WhatsApp: +1 321 318 2366</p>
-      <p>Ubicación: 1307 W Memorial Blvd, Lakeland, Florida, 33815</p>
+    <img src="images/logo-chaparrito.png" class="logo-left" alt="Chaparrito Logo">
+    <img src="images/logo-takethekey.png" class="logo-right" alt="Take The Key Logo">
 
-      <a class="btn" href="#inventario">Ver Inventario</a>
-      <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
-      <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+    <div class="banner-text">
+      <h1>¡Y SALES RODANDO!</h1>
+      <p>Estrena tu vehículo hoy en Florida</p>
     </div>
+
+    <img src="images/banner-duo.png" class="banner-duo" alt="Caroly y Douglas">
   </header>
+
+  <!-- BOTONES -->
+  <div style="text-align:center; margin-top:20px;">
+    <a class="btn" href="#inventario">Ver Inventario</a>
+    <a class="btn" href="#formulario">Solicitar Pre-Aprobación</a>
+    <a class="btn" href="https://wa.me/13213182366" target="_blank">WhatsApp</a>
+  </div>
 
   <!-- INVENTARIO -->
   <section id="inventario" class="section">
@@ -183,8 +267,7 @@
     <p>
       En Caroly & El Chaparrito Auto Sales trabajamos con honestidad, transparencia y dedicación.
       Ayudamos a toda la comunidad, incluyendo clientes con ITIN, sin crédito o reconstruyendo crédito.
-      Nuestro objetivo es ofrecer vehículos confiables y un servicio excepcional, con atención personalizada
-      y asesoría directa de Caroly y Douglas, quienes te acompañan en cada paso del proceso.
+      Nuestro objetivo es ofrecer vehículos confiables y un servicio excepcional.
     </p>
   </section>
 
